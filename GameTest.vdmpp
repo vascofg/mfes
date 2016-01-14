@@ -1,0 +1,52 @@
+class GameTest
+  instance variables
+    b : Board := new Board();
+  operations
+    public static main: () ==> ()
+    main() ==
+    (
+    	dcl gt : GameTest := new GameTest();
+    	dcl A1 : int := gt.b.getCircleIndex('A','1');
+			dcl A3 : int := gt.b.getCircleIndex('A','3');
+			dcl A5 : int := gt.b.getCircleIndex('A','5');
+			dcl B1 : int := gt.b.getCircleIndex('B','1');
+			dcl B2 : int := gt.b.getCircleIndex('B','2');
+			dcl B3 : int := gt.b.getCircleIndex('B','3');
+			dcl B5 : int := gt.b.getCircleIndex('B','5');
+			dcl C1 : int := gt.b.getCircleIndex('C','1');
+			dcl C2 : int := gt.b.getCircleIndex('C','2');
+			dcl C5 : int := gt.b.getCircleIndex('C','5');
+			dcl D1 : int := gt.b.getCircleIndex('D','1');
+			dcl D3 : int := gt.b.getCircleIndex('D','3');
+			dcl D5 : int := gt.b.getCircleIndex('D','5');
+			dcl E1 : int := gt.b.getCircleIndex('E','1');
+			dcl E3 : int := gt.b.getCircleIndex('E','3');
+			dcl E5 : int := gt.b.getCircleIndex('E','5');
+    	
+    	gt.b.movePiece(A5, B3);
+    	gt.b.movePiece(B3, A1);
+    	
+    	gt.b.movePiece(B5, A3);
+    	gt.b.movePiece(A3, B1);
+    	
+    	gt.b.movePiece(C5, B3);
+    	gt.b.movePiece(B3, B2);
+    	gt.b.movePiece(B2, D1);
+    	
+    	gt.b.movePiece(D5, E3);
+    	gt.b.movePiece(E3, C2);
+    	gt.b.movePiece(C2, E1);
+    	
+    	gt.b.movePiece(E5, D3);
+    	gt.b.movePiece(D3, C1);
+    	
+    	if gt.b.gameEnded() then (
+    		IO`println("GAME ENDED");
+    		IO`print("SCORE WHITE ");
+	    	IO`println(gt.b.getScore('W'));
+	    	IO`print("SCORE BLACK ");
+	    	IO`println(gt.b.getScore('B')));
+    
+    );
+
+end GameTest
